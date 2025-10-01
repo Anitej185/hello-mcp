@@ -12,4 +12,4 @@ def welcome(name: str = Field(description="Name of the user")) -> str:
 
 if __name__ == "__main__":
     # letting FastMCP auto-pick a port and announce it
-    mcp.run(transport="streamable-http")
+    mcp.run(transport="stdio")
