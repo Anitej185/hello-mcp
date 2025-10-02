@@ -7,8 +7,6 @@ port = int(os.environ.get("PORT", 8080))
 
 mcp = FastMCP(
     name="Hello MCP Server",
-    host="0.0.0.0",
-    port=port,
     stateless_http=True,
     debug=False,
 )
@@ -27,8 +25,7 @@ def welcome(
     description="Get information about the MCP server.",
 )
 def server_info() -> str:
-    return f"MCP Server running on port {port} with streamable-http transport"
+    return f"MCP Server running with streamable-http transport"
 
-if __name__ == "__main__":
-    # Use streamable-http transport for deployment
-    mcp.run(transport="streamable-http")
+# IMPORTANT: no __main__ guard for deployment; start on import so Lambda boots the server automatically
+mcp.run(transport="streamable-http")
