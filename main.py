@@ -16,8 +16,7 @@ def welcome(
 ) -> str:
     return f"Welcome {name} from this amazing application!"
 
-if __name__ == "__main__":
-    mcp.run(transport="streamable-http")
+mcp.run(transport="streamable-http")
 
 # from mcp.server.fastmcp import FastMCP
 # from pydantic import Field
